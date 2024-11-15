@@ -30,7 +30,7 @@ public class KMLConverter {
 
     static List getBL(double x, double y) {
         List<Double> list = new ArrayList();
-        x += -125.0;
+        x += -150.0;
         y += -117.0;
         int nZonu = (int) Math.round(y * Math.pow(10.0, -6.0));
         double b = x / 6367558.4968;
