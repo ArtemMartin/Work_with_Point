@@ -21,6 +21,7 @@ public class ClearingTargetsBySquares {
         double y0;
         double x2;
         boolean a = false;
+        boolean b = false;
 
         updateList();
 
@@ -44,8 +45,10 @@ public class ClearingTargetsBySquares {
             newFile = new File("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\NewZELI");
             FileWriter writer = new FileWriter(newFile, true);
             //зацыкливаем пока не удалит всё
-            while (!a) {
-                for (int j = 0; j < list.size(); j++) {
+            int j;
+            while (!b) {
+                a = false;
+                for (j = 0; j < list.size(); j++) {
                     mass2 = list.get(j).split(",");
                     x2 = Double.parseDouble(mass2[1]);
                     y2 = Double.parseDouble(mass2[2]);
@@ -56,8 +59,8 @@ public class ClearingTargetsBySquares {
                         System.out.println("Удалено..." + mass2[0]);
                         a = true;
                     }
-                    //if (j >= list.size() && !a) break;
                 }
+                if (!a && j >= list.size()) b = true;
             }
             if (!a) {
                 System.out.println("Квадрат уже чист!!!");
