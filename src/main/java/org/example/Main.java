@@ -13,7 +13,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         int vvod;
         while (true) {
-            System.out.println("---------------------ver 1.05------------------------");
+            System.out.println("---------------------ver 1.06------------------------");
             System.out.println("0 - Проверка на совпадения по номерам и координатам");
             System.out.println("10 - Почистить квадрат от целей");
             System.out.println("1 - Отсеять номера с точкой");
