@@ -30,7 +30,7 @@ public class KMLConverter {
 
     static List getBL(double x, double y) {
         List<Double> list = new ArrayList();
-        x += getDX(y);
+        x += getDX(y) + 35;
         y += -117.0;
         int nZonu = (int) Math.round(y * Math.pow(10.0, -6.0));
         double b = x / 6367558.4968;
@@ -106,7 +106,7 @@ public class KMLConverter {
 
             XMLOutputter xmlOutput = new XMLOutputter();
             xmlOutput.setFormat(Format.getPrettyFormat());
-            xmlOutput.output(doc, new FileWriter("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\"+strNewFile + ".kml"));
+            xmlOutput.output(doc, new FileWriter("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\" + strNewFile + ".kml"));
 
             System.out.println("KML файл (" + strNewFile + ".kml" + ") успешно создан, всего записано "
                     + listTochek.size() + " точек!");
