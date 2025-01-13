@@ -24,6 +24,7 @@ public class Main {
             System.out.println("4 - Конвертация в kml");
             System.out.println("6 - Конвертировать kml в csv");
             System.out.println("7 - Конвертировать BL в XY");
+            System.out.println("8 - Преобразовать CSV в Zeli");
             System.out.println("9 - Exit...");
             System.out.println("-----------------------------------------------------");
             try {
@@ -52,6 +53,9 @@ public class Main {
                     break;
                 case 7:
                     new CSVWGStoCSVXY().preobrazovatFilBLtoFilXY();
+                    break;
+                case 8:
+                    new CSVtoZeli().make();
                     break;
                 case 9:
                     return;
