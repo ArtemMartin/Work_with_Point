@@ -6,13 +6,13 @@ import java.util.logging.Logger;
 
 public class CSVtoZeli {
 
-    public  void make()  {
+    public void make() {
         int checkout = 1;
         int checkVusota = 0;
         int vusota = 0;
         System.out.println("------------Преобразовать CSV в Zeli----------");
         System.out.println("Перед началом работы убедись что разделитель запятая и в файле " +
-                "структура формата имя, X, Y, h");
+                "структура формата имя, X, Y, h или имя, X, Y");
         while (checkout == 1) {
             Scanner scaner = new Scanner(System.in);
             System.out.print("Ввести название файла с расширением: ");
@@ -51,7 +51,9 @@ public class CSVtoZeli {
                         x = x % 100000;
                         y = Long.parseLong(getString(mass[2]));
                         y = y % 100000;
-                        h = Double.parseDouble(mass[3]);
+                        if (checkVusota == 1) {
+                            h = Double.parseDouble(mass[3]);
+                        }
                     } catch (ArrayIndexOutOfBoundsException ex) {
                         Logger.getLogger(Main.class.getName()).info("Шляпа: " + ex.getMessage());
                     }
@@ -59,7 +61,6 @@ public class CSVtoZeli {
                         writer.write(name + "," + x + "," + y + "," + vusota + "," + 0 + "," + 0 + "\n");
                     } else {
                         writer.write(name + "," + x + "," + y + "," + h + "," + 0 + "," + 0 + "\n");
-
                     }
                     line = reader.readLine();
 
@@ -77,12 +78,12 @@ public class CSVtoZeli {
         }
     }
 
-    public  void ochistka() throws IOException {
+    public void ochistka() throws IOException {
         File newFile = new File("Zeli");
         new FileWriter(newFile);
     }
 
-    public  String getString(String str) {
+    public String getString(String str) {
         StringBuilder digit = new StringBuilder();
         for (char c : str.toCharArray()) {
             if (Character.isDigit(c)) {
