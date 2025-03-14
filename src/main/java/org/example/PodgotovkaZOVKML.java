@@ -9,10 +9,10 @@ public class PodgotovkaZOVKML {
         long x = Long.parseLong(arr[1]);
         long y = Long.parseLong(arr[2]);
         x = x + 5300000;
-        if (y > 99999) {
-            y = y + 7400000;
-        } else {
+        if (y > 50000) {
             y = y + 7300000;
+        } else {
+            y = y + 7400000;
         }
         return name + "," + x + "," + y;
     }
