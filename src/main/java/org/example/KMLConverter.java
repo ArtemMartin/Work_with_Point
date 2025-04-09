@@ -14,9 +14,9 @@ public class KMLConverter {
     static Element getTochKML(Tochka tochka) {
         Element placemark = new Element("Placemark");
         Element description = new Element("description");
-        description.setText(tochka.getNumber());
+        //description.setText(tochka.getNumber());
         Element name = new Element("name");
-        name.setText(tochka.getNumber());
+        name.setText('_' + tochka.getNumber());
         Element point = new Element("Point");
         Element coordinates = new Element("coordinates");
         coordinates.setText(tochka.getLongitude() + "," + tochka.getLatitude());
