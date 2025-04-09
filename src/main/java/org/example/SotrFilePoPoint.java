@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 
 import static org.example.OtdelitCeliSBykvoi.closeStreamsQuietly;
 
@@ -14,15 +15,15 @@ public class SotrFilePoPoint {
         File fileToch = new File("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\ZeliSTochkoi");
 
         try {
-            FileWriter writer = new FileWriter(fileToch, true);
-            FileWriter writer2 = new FileWriter(newFile, true);
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileToch, true),"windows-1251");
+            OutputStreamWriter writer2 = new OutputStreamWriter(new FileOutputStream(newFile, true),"windows-1251");
             String nZeli;
             String[] strArr;
             boolean sTochLiZel;
             int schetchik = 0;
 
             //создаем BufferedReader с существующего FileReader для построчного считывания
-            BufferedReader reader = new BufferedReader(new FileReader(file));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"windows-1251"));
             // считаем сначала первую строку
             String line = reader.readLine();
             while (line != null) {

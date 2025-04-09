@@ -1,6 +1,7 @@
 package org.example;
 
 import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 
 public class PodgotovkaZOVKML {
@@ -34,8 +35,8 @@ public class PodgotovkaZOVKML {
         File file = new File(strfile);
         File file2 = new File(file + ".txt");
         try {
-            BufferedReader reader = new BufferedReader(new FileReader(file));
-            FileWriter writer = new FileWriter(file2, true);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "windows-1251"));
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file2, true),"windows-1251");
             String line = reader.readLine();
             String strDlaZapisi;
             String[] strArr;

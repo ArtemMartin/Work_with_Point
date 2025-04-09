@@ -37,7 +37,7 @@ public class KMLConverter {
     private void writeKML(File file, String strNewFile) {
         List<Tochka> listTochek = new ArrayList<>();
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "windows-1251"));
             String line;
             String[] mas;
             line = reader.readLine();
