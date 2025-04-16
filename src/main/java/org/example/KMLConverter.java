@@ -16,7 +16,7 @@ public class KMLConverter {
         Element description = new Element("description");
         //description.setText(tochka.getNumber());
         Element name = new Element("name");
-        name.setText('_' + tochka.getNumber());
+        name.setText(tochka.getNumber());
         Element point = new Element("Point");
         Element coordinates = new Element("coordinates");
         coordinates.setText(tochka.getLongitude() + "," + tochka.getLatitude());
