@@ -1,6 +1,8 @@
 package org.example;
 
 import java.io.*;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
@@ -24,7 +26,6 @@ public class CSVtoZeli {
             } catch (IOException e) {
                 System.out.println(e.toString());
             }
-
             System.out.print("Высота с файла - 1, вручную - 0: ");
             checkVusota = scaner.nextInt();
             if (checkVusota == 0) {
@@ -34,17 +35,26 @@ public class CSVtoZeli {
             File newFile = new File("Zeli");
             String line;
             String name;
+            String prefiks = "";
+            //добавляем к имени цели префикс
+            System.out.print("Добавить префикс перед номером цели - 1, НЕТ - 0: ");
+            int q = scaner.nextInt();
+            if (q == 1) {
+                System.out.print("Ввести префикс: ");
+                prefiks = scaner.next();
+            }
+
             long x = 0;
             long y = 0;
             double h = 0;
             try {
-                FileWriter writer = new FileWriter(newFile, true);
+                FileWriter writer = new FileWriter(newFile, StandardCharsets.UTF_8, true);
                 BufferedReader reader = new BufferedReader(new FileReader(file));
                 String[] mass;
                 line = reader.readLine();
                 while ((line) != null) {
                     mass = line.split(",");
-                    name = mass[0];
+                    name = prefiks + mass[0];
                     try {
                         //обрабатываем x y h
                         x = Long.parseLong(getString(mass[1]));

@@ -25,7 +25,7 @@ public class ProverkaPoint {
 
         try {
             newFile = new File("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\New" + file.getName());
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(newFile, true),StandardCharsets.UTF_8);
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(newFile, true),"windows-1251");
             for (int i = 0; i < list.size(); i++) {
                 mass = list.get(i).split(",");
                 x = Double.parseDouble(mass[1]);
