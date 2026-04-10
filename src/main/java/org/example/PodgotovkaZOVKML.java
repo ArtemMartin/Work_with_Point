@@ -35,8 +35,8 @@ public class PodgotovkaZOVKML {
         File file = new File(strfile);
         File file2 = new File(file + ".txt");
         try {
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "windows-1251"));
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file2, true),"windows-1251");
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(file2, true),StandardCharsets.UTF_8);
             String line = reader.readLine();
             String strDlaZapisi;
             String[] strArr;

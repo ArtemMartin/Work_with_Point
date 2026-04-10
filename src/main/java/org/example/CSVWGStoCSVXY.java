@@ -76,7 +76,7 @@ public class CSVWGStoCSVXY {
             System.out.println(e.getMessage());
         }
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
-             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(newFile)))) {
+             BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(newFile), StandardCharsets.UTF_8))) {
             String line;
             String[] mas;
             line = reader.readLine();

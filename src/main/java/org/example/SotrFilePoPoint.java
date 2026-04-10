@@ -15,15 +15,15 @@ public class SotrFilePoPoint {
         File fileToch = new File("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\ZeliSTochkoi");
 
         try {
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileToch, true),"windows-1251");
-            OutputStreamWriter writer2 = new OutputStreamWriter(new FileOutputStream(newFile, true),"windows-1251");
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(fileToch, true),StandardCharsets.UTF_8);
+            OutputStreamWriter writer2 = new OutputStreamWriter(new FileOutputStream(newFile, true),StandardCharsets.UTF_8);
             String nZeli;
             String[] strArr;
             boolean sTochLiZel;
             int schetchik = 0;
 
             //создаем BufferedReader с существующего FileReader для построчного считывания
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),"windows-1251"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file),StandardCharsets.UTF_8));
             // считаем сначала первую строку
             String line = reader.readLine();
             while (line != null) {

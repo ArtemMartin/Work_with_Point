@@ -22,15 +22,15 @@ public class OtdelitCeliSBykvoi {
         BufferedReader reader = null;
 
         try {
-            writer = new OutputStreamWriter(new FileOutputStream(fileToch, true),"windows-1251");
-            writer2 = new OutputStreamWriter(new FileOutputStream(newFile, true),"windows-1251");
+            writer = new OutputStreamWriter(new FileOutputStream(fileToch, true),StandardCharsets.UTF_8);
+            writer2 = new OutputStreamWriter(new FileOutputStream(newFile, true),StandardCharsets.UTF_8);
             String nZeli;
             String[] strArr;
             boolean sTochLiZel;
             int schetchik = 0;
 
             // Создаем BufferedReader с существующего FileReader для построчного считывания
-            reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "windows-1251"));
+            reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
             // Считаем сначала первую строку
             String line = reader.readLine();
             while (line != null) {

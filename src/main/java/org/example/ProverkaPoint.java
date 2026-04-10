@@ -25,7 +25,7 @@ public class ProverkaPoint {
 
         try {
             newFile = new File("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\New" + file.getName());
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(newFile, true),"windows-1251");
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(newFile, true),StandardCharsets.UTF_8);
             for (int i = 0; i < list.size(); i++) {
                 mass = list.get(i).split(",");
                 x = Double.parseDouble(mass[1]);
@@ -66,7 +66,7 @@ public class ProverkaPoint {
 
         try {
             newFile = new File("D:\\YO_NA\\Projekts\\Work_with_Point\\ManagerWorkPoint\\New" + file.getName());
-            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(newFile, true),"windows-1251");
+            OutputStreamWriter writer = new OutputStreamWriter(new FileOutputStream(newFile, true),StandardCharsets.UTF_8);
             for (int i = 0; i < list.size(); i++) {
                 mass = list.get(i).split(",");
                 nZeli = mass[0];
@@ -98,7 +98,7 @@ public class ProverkaPoint {
         list.clear();
         try {
             String line;
-            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "windows-1251"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), StandardCharsets.UTF_8));
             while ((line = reader.readLine()) != null) {
                 list.add(line);
             }
